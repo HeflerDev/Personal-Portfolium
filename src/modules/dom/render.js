@@ -6,8 +6,8 @@ const render = (() => {
     contact: document.getElementById('btn-contact')
   };
 
-  const _createElement = (elId, elParent, elType = null, elClass = null) => {    
-    // Should create an element
+  const _createElement = (elId, elParent, elType = 'div', elClass = null) => {    
+    document.createElement(elType);
   };
 
   const aboutTab = () => {
