@@ -2,7 +2,7 @@ import render from './render';
 
 const nav = (() => {
   render.listeners.about.addEventListener('click', () => {
-    // Should display a tab
+    render.aboutTab();
   });
 
   render.listeners.featured.addEventListener('click', () => {

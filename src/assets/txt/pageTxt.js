@@ -7,8 +7,6 @@ const pageTxt = (() => {
       "where I train my skills every day as a full-stack software developer. <br>" +
       "In the past year, I’ve created plenty of React, Rails, and Web projects additionally, " +
       "growing my teamwork through pair coding with people internationally. " 
-    /*
-    */
   }
 
   const searching = {

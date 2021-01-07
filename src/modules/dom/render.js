@@ -37,6 +37,7 @@ const render = (() => {
   const aboutTab = () => {
     if (document.getElementById('about-container')) {
       // Handle Error
+      console.error('Error');
     } else {
       _createElement('about-container', 'content', 'div', ['box', 'no-space', 'flex-grid']);
       _textContainer('presentation-container', 'about-container', pageTxt.presentation.title, pageTxt.presentation.body);
