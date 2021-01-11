@@ -18,7 +18,7 @@ const pageTxt = (() => {
   }
 
   const contact = {
-    title: "Whant to talk to me?",
+    title: "Want to talk to me?",
     body:
       "Well, I’d love to not only connect with possible employers, " +
       "but also people who share the same interests as me. " +

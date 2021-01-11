@@ -5,7 +5,7 @@ const nav = (() => {
     render.aboutTab();
   });
 
-  render.listeners.featured.addEventListener('click', () => {
+  render.listeners.skills.addEventListener('click', () => {
     // Should display a tab
   });
 

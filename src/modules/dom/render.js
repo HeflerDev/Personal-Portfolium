@@ -3,7 +3,7 @@ import pageTxt from '../../assets/txt/pageTxt';
 const render = (() => {
   const listeners = {
     about: document.getElementById('btn-about'),
-    featured: document.getElementById('btn-featured'),
+    skills: document.getElementById('btn-skills'),
     portfolio: document.getElementById('btn-portfolio'),
     contact: document.getElementById('btn-contact')
   };
