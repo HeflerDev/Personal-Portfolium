@@ -1,3 +1,4 @@
+import Chart from 'chart.js';
 import pageTxt from '../../assets/txt/pageTxt';
 
 const render = (() => {
@@ -34,6 +35,17 @@ const render = (() => {
       .innerHTML = txt;
   };
 
+  const _skillsContainer = (elId, elParent, title, obj) => {
+    _createElement(elId, elParent);
+    _createElement(`skill-block-${elId}`, elId, 'div', ['col-12', 'col-m-6', 'col-l-4', 'flex-grid']);
+    _createElement(`skill-name-${elId}`, `skill-block-${elId}`, 'div', 'col-12')
+      .textContent = title;
+    const graph = _createElement(`skill-graph-${elId}`, `skill-block-${elId}`, 'canvas', 'col-12');
+    graph.width = '100%';
+    graph.height = '400px';
+    return new Chart(graph, obj);  
+  };
+
   const aboutTab = () => {
     if (document.getElementById('about-container')) {
       // Handle Error
@@ -43,6 +55,8 @@ const render = (() => {
       _textContainer('presentation-container', 'about-container', pageTxt.presentation.title, pageTxt.presentation.body);
       _textContainer('opportunity-container', 'about-container', pageTxt.searching.title, pageTxt.searching.body); 
       _textContainer('contact-container', 'about-container', pageTxt.contact.title, pageTxt.contact.body);
+      _skillsContainer('skills-container', 'about-container', pageTxt.graphic.title, pageTxt.graphic.body);
+      
     }
   };
 
