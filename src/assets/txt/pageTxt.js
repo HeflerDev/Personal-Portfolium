@@ -30,64 +30,38 @@ const pageTxt = (() => {
   const graphic = {
     title: 'My Skills',
     body: {
-type: 'doughnut',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-      /*
       type: 'doughnut',
       data: {
-        labels: ['Html & CSS', 'JavaScript', 'Ruby', 'Ruby On Rails'],
-        dataSets: [{
-          label: '# Languages',
-          data: [12, 14, 15, 16],
-          backgroundColor: [
-            'red',
-            'green',
-            'blue',
-            'yellow',
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-          ],
-          borderWidth: 1
-        }]
+          labels: ['Html & Css', 'JavaScript', 'Ruby', 'Ruby On Rails'],
+          datasets: [{
+              label: '# of Votes',
+              data: [22.8, 34.8, 11.9, 30.4],
+              backgroundColor: [
+                'black',
+                'white',
+                'darkgray',
+                'lightgray'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+              ],
+              borderWidth: 1
+          }]
       },
-      options: {}
-      */
+      options: {
+        layout: {
+          padding: 20,
+        },
+        legend: {
+          position: 'right',
+          labels: {
+            fontColor: 'black'
+          }
+        }
+      }
     }
     
   };

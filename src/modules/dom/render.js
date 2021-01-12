@@ -26,23 +26,25 @@ const render = (() => {
   };
 
   const _textContainer = (elId, elParent, title, txt) => {
-    _createElement(elId, elParent); 
-    _createElement(`image-container-${elId}`, elId, 'div', ['col-12', 'col-m-4', 'mock-block']); 
+    _createElement(`big-container-${elId}`, elParent, 'div', ['big-container', 'box', 'center']);
+    _createElement(elId, `big-container-${elId}`, 'div', ['small-container', 'flex-grid']); 
+    _createElement(`image-container-${elId}`, elId, 'div', ['col-12', 'col-m-4']); 
     _createElement(`text-container-${elId}`, elId, 'div', ['col-12', 'col-m-8', 'flex-grid']);
-    _createElement(`title-container-${elId}`, `text-container-${elId}`, 'div', 'col-12')
-      .textContent = title;  
-    _createElement(`description-container-${elId}`, `text-container-${elId}`, 'div', 'col-12')
+    _createElement(`title-container-${elId}`, `text-container-${elId}`, 'div', ['col-12', 'minibox', 'center'])
+    _createElement(`title-${elId}`, `title-container-${elId}`, 'div')
+      .innerHTML = title;
+    _createElement(`description-container-${elId}`, `text-container-${elId}`, 'div', ['col-12', 'minibox', 'center']);
+    _createElement(`description-${elId}`, `description-container-${elId}`, 'div')
       .innerHTML = txt;
   };
 
   const _skillsContainer = (elId, elParent, title, obj) => {
-    _createElement(elId, elParent);
+    _createElement(elId, elParent, 'div', 'big-container');
     _createElement(`skill-block-${elId}`, elId, 'div', ['col-12', 'col-m-6', 'col-l-4', 'flex-grid']);
     _createElement(`skill-name-${elId}`, `skill-block-${elId}`, 'div', 'col-12')
       .textContent = title;
-    const graph = _createElement(`skill-graph-${elId}`, `skill-block-${elId}`, 'canvas', 'col-12');
-    graph.width = '100%';
-    graph.height = '400px';
+    _createElement(`skill-graph-container-${elId}`, `skill-block-${elId}`, 'div', 'col-12');
+    const graph = _createElement(`skill-graph-${elId}`, `skill-graph-container-${elId}`, 'canvas');
     return new Chart(graph, obj);  
   };
 

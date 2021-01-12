@@ -1,16 +1,28 @@
 @import 'framework.css';
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&family=Cutive+Mono&family=Nixie+One&display=swap');
 
 $color-mock: rgba(100,100,100,0.2);
-
+$font-general: 'Alegreya', serif;
+$font-primary: 'Cutive Mono', monospace;
+$font-aux: 'Nixie One', cursive;
 
 * {
   background-color: $color-mock; 
   border: solid rgba(50,50,50,0.5);
+  font-family: $font-general;
 }
 
 .mock-block {
   min-height: 5rem;
   background-color: $color-mock; 
+}
+
+.big-container {
+  height: 100vh;
+}
+
+.small-container {
+  min-height: 30vh;
 }
 
 .no-space {
