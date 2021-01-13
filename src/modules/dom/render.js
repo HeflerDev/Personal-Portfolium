@@ -26,7 +26,7 @@ const render = (() => {
     return el;
   };
 
-  const _textContainer = (elId, elParent, title, txt) => { //Deprecated
+  const _textContainer = (elId, elParent, title, txt) => { 
     _createElement(`big-container-${elId}`, elParent, 'div', ['big-container', 'box', 'center']);
     _createElement(elId, `big-container-${elId}`, 'div', ['small-container', 'flex-grid']); 
     _createElement(`image-container-${elId}`, elId, 'div', ['col-12', 'col-l-4']); 
@@ -43,11 +43,11 @@ const render = (() => {
     _createElement(`big-container-${elId}`, elParent, 'div', ['big-container', 'box', 'center']);
     _createElement(elId, `big-container-${elId}`, 'div', ['small-container', 'flex-grid']);
     
-    _createElement(`skill-block-${elId}`, elId, 'div', ['col-12', 'col-l-6']);
+    _createElement(`skill-block-${elId}`, elId, 'div', ['col-12', 'col-l-6', 'spin']);
       const graph = _createElement(`skill-${elId}`, `skill-block-${elId}`, 'canvas');
     _createElement(`skill-desc-${elId}`, elId, 'div', ['col-12', 'col-l-6', 'minibox'])
       .textContent = body; 
-    return new Chart(graph, obj);
+    return new Chart(graph, obj); // the bug is because of this
   };
 
   const aboutTab = () => {

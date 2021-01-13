@@ -6,10 +6,11 @@ $font-general: 'Alegreya', serif;
 $font-primary: 'Cutive Mono', monospace;
 $font-aux: 'Nixie One', cursive;
 
-* {
+/* * {
   background-color: $color-mock; 
   border: solid rgba(50,50,50,0.5);
 }
+*/
 
 html {
   scroll-behavior: smooth;
@@ -19,10 +20,34 @@ header {
   min-height: 100vh;
 }
 
-.mock-block {
-  min-height: 5rem;
-  background-color: $color-mock; 
+#content {
+  background-color: whitesmoke;
+  padding: 20px;
 }
+
+.mock-block {
+  min-height: 100vh;
+  background-color: rgb(36, 36, 36); 
+}
+
+/*
+.spin {
+  background-color: red;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+*/
 
 .big-container {
   min-height: 100vh;
@@ -45,12 +70,24 @@ header {
   max-height: 100vh;
   position: sticky;
   top: 0;
+  background-color: white;
 }
 
 .item-container {
-  height: 100%;
+  border-radius: 0 10px 0 10px; 
+  height: 20%;
+  transition: 0.2s;
+  border-right: solid lightgray 0.1rem;
+  border-bottom: solid lightgray 0.1rem;
+  border-left: none; 
+  border-top: none;
   &:hover{
+    transition: 0.2s;
     cursor: pointer;
+    border-right: none; 
+    border-bottom: none;
+    border-left: solid lightgray 0.1rem;
+    border-top: solid lightgray 0.1rem;
   }
 }
 

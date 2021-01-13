@@ -47,18 +47,11 @@ const pageTxt = (() => {
               label: '# of Votes',
               data: [21.8, 32.8, 5.1, 10.9, 29.4],
               backgroundColor: [
-                'red',
-                'green',
+                'orange',
                 'blue',
-                'yellow',
-                'brown'
-              ],
-              borderColor: [
-                'darkred',
-                'darkgreen',
                 'darkblue',
-                'darkyellow',
-                'darkbrown'
+                'red',
+                'darkred'
               ],
               borderWidth: 1
           }]
