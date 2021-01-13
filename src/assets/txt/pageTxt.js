@@ -4,9 +4,9 @@ const pageTxt = (() => {
     title: 'Who am I?',
     body: 
       "Hey, I’m Henry, and I currently Study at Microverse, a remote coding school, " + 
-      "where I train my skills every day as a full-stack software developer. <br>" +
-      "In the past year, I’ve created plenty of React, Rails, and Web projects additionally, " +
-      "growing my teamwork through pair coding with people internationally. " 
+      "where I train my skills every day as a full-stack software developer. <br>" + 
+      "My design focus on functionality, simplicity and getting straight to the point, " +
+      "as you will notice in this page. "
   }
 
   const searching = {
@@ -27,9 +27,18 @@ const pageTxt = (() => {
       "or through the e-mail heflerdev@gmail.com."
   }
 
+  const portfolio = {
+    title: "Portfolio",
+    body: 
+      "I Have several projects hosted on github <a href='https://github.com/heflerdev'>Here</a>."
+  }
+
   const graphic = {
     title: 'My Skills',
-    body: '',
+    body: 
+      "In the past year, I’ve created plenty of React, Rails, and Web projects additionally, " +
+      "growing my teamwork through pair coding with people from all around the world. " 
+    ,
     data: {
       type: 'doughnut',
       data: {
@@ -73,7 +82,8 @@ const pageTxt = (() => {
     presentation,
     searching,
     contact,
-    graphic
+    graphic,
+    portfolio
   }
 })();
 

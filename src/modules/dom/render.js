@@ -69,12 +69,33 @@ const render = (() => {
      return container;
    }
   };
-  
+
+  const portfolioTab = () => {
+    if (validations.containerPresence('portfolio-container')) {
+      return document.getElementById('portfolio-container');
+    } else {
+      const container = _createElement('portfolio-container', 'content', 'div', ['box', 'no-space', 'flex-grid']);
+      _textContainer('github-container', 'portfolio-container', pageTxt.portfolio.title, pageTxt.portfolio.body);
+      return container;
+    }
+  };
+
+  const contactTab = () => {
+    if (validations.containerPresence('contact-container')) {
+      return document.getElementById('contact-container');
+    } else {
+      const container = _createElement('contact-container', 'content', 'div', ['box', 'no-space', 'flex-grid']);
+      _textContainer('talk-to-container', 'contact-container', pageTxt.contact.title, pageTxt.contact.body);
+      return container;
+    }
+  };
 
   return {
     listeners,
     aboutTab,
-    skillsTab
+    skillsTab,
+    contactTab,
+    portfolioTab
   }
 
 })();

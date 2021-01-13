@@ -9,15 +9,17 @@ const nav = (() => {
 
   render.listeners.skills.addEventListener('click', () => {
     render.skillsTab()
-    document.getElementById('skills-container').scrollIntoView(true);
+      .scrollIntoView(true);
   });
 
   render.listeners.portfolio.addEventListener('click', () => {
-    // Should display a tab
+    render.portfolioTab()
+      .scrollIntoView(true);
   });
   
   render.listeners.contact.addEventListener('click', () => {
-    // Should display a tab
+    render.contactTab()
+      .scrollIntoView(true);
   });
 })();
 
