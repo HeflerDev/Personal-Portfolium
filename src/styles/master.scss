@@ -9,7 +9,6 @@ $font-aux: 'Nixie One', cursive;
 * {
   background-color: $color-mock; 
   border: solid rgba(50,50,50,0.5);
-  font-family: $font-general;
 }
 
 .mock-block {
@@ -23,6 +22,33 @@ $font-aux: 'Nixie One', cursive;
 
 .small-container {
   min-height: 30vh;
+}
+
+.subtitle {
+  font-family: $font-aux;
+  font-size: 3rem;
+}
+
+.item {
+  text-align: center;
+}
+
+.items-container {
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.item-container {
+  height: 100%;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.body-text {
+  font-family: $font-primary;
+  font-size: 1.5rem;
 }
 
 .no-space {

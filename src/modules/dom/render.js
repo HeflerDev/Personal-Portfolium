@@ -31,17 +31,17 @@ const render = (() => {
     _createElement(`image-container-${elId}`, elId, 'div', ['col-12', 'col-m-4']); 
     _createElement(`text-container-${elId}`, elId, 'div', ['col-12', 'col-m-8', 'flex-grid']);
     _createElement(`title-container-${elId}`, `text-container-${elId}`, 'div', ['col-12', 'minibox', 'center'])
-    _createElement(`title-${elId}`, `title-container-${elId}`, 'div')
-      .innerHTML = title;
+    _createElement(`title-${elId}`, `title-container-${elId}`, 'div', 'subtitle')
+      .innerHTML = '<h2>' + title + '</h2>';
     _createElement(`description-container-${elId}`, `text-container-${elId}`, 'div', ['col-12', 'minibox', 'center']);
-    _createElement(`description-${elId}`, `description-container-${elId}`, 'div')
+    _createElement(`description-${elId}`, `description-container-${elId}`, 'div', 'body-text')
       .innerHTML = txt;
   };
 
   const _skillsContainer = (elId, elParent, title, obj) => {
     _createElement(elId, elParent, 'div', 'big-container');
     _createElement(`skill-block-${elId}`, elId, 'div', ['col-12', 'col-m-6', 'col-l-4', 'flex-grid']);
-    _createElement(`skill-name-${elId}`, `skill-block-${elId}`, 'div', 'col-12')
+    _createElement(`skill-name-${elId}`, `skill-block-${elId}`, 'div', 'col-12') 
       .textContent = title;
     _createElement(`skill-graph-container-${elId}`, `skill-block-${elId}`, 'div', 'col-12');
     const graph = _createElement(`skill-graph-${elId}`, `skill-graph-container-${elId}`, 'canvas');
