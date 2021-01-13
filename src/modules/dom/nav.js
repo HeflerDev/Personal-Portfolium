@@ -2,11 +2,14 @@ import render from './render';
 
 const nav = (() => {
   render.listeners.about.addEventListener('click', () => {
-    render.aboutTab();
+    render.aboutTab()
+      .scrollIntoView(true);
+    
   });
 
   render.listeners.skills.addEventListener('click', () => {
-    // Should display a tab
+    render.skillsTab()
+    document.getElementById('skills-container').scrollIntoView(true);
   });
 
   render.listeners.portfolio.addEventListener('click', () => {

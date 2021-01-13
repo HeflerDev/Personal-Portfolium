@@ -1,5 +1,6 @@
 import Chart from 'chart.js';
 import pageTxt from '../../assets/txt/pageTxt';
+import validations from './validations';
 
 const render = (() => {
   const listeners = {
@@ -25,11 +26,11 @@ const render = (() => {
     return el;
   };
 
-  const _textContainer = (elId, elParent, title, txt) => {
+  const _textContainer = (elId, elParent, title, txt) => { //Deprecated
     _createElement(`big-container-${elId}`, elParent, 'div', ['big-container', 'box', 'center']);
     _createElement(elId, `big-container-${elId}`, 'div', ['small-container', 'flex-grid']); 
-    _createElement(`image-container-${elId}`, elId, 'div', ['col-12', 'col-m-4']); 
-    _createElement(`text-container-${elId}`, elId, 'div', ['col-12', 'col-m-8', 'flex-grid']);
+    _createElement(`image-container-${elId}`, elId, 'div', ['col-12', 'col-l-4']); 
+    _createElement(`text-container-${elId}`, elId, 'div', ['col-12', 'col-l-8', 'flex-grid']);
     _createElement(`title-container-${elId}`, `text-container-${elId}`, 'div', ['col-12', 'minibox', 'center'])
     _createElement(`title-${elId}`, `title-container-${elId}`, 'div', 'subtitle')
       .innerHTML = '<h2>' + title + '</h2>';
@@ -38,33 +39,42 @@ const render = (() => {
       .innerHTML = txt;
   };
 
-  const _skillsContainer = (elId, elParent, title, obj) => {
-    _createElement(elId, elParent, 'div', 'big-container');
-    _createElement(`skill-block-${elId}`, elId, 'div', ['col-12', 'col-m-6', 'col-l-4', 'flex-grid']);
-    _createElement(`skill-name-${elId}`, `skill-block-${elId}`, 'div', 'col-12') 
-      .textContent = title;
-    _createElement(`skill-graph-container-${elId}`, `skill-block-${elId}`, 'div', 'col-12');
-    const graph = _createElement(`skill-graph-${elId}`, `skill-graph-container-${elId}`, 'canvas');
-    return new Chart(graph, obj);  
+  const _skillsContainer = (elId, elParent, title, body,  obj) => {
+    _createElement(`big-container-${elId}`, elParent, 'div', ['big-container', 'box', 'center']);
+    _createElement(elId, `big-container-${elId}`, 'div', ['small-container', 'flex-grid']);
+    
+    _createElement(`skill-block-${elId}`, elId, 'div', ['col-12', 'col-l-6']);
+      const graph = _createElement(`skill-${elId}`, `skill-block-${elId}`, 'canvas');
+    _createElement(`skill-desc-${elId}`, elId, 'div', ['col-12', 'col-l-6', 'minibox'])
+      .textContent = body; 
+    return new Chart(graph, obj);
   };
 
   const aboutTab = () => {
-    if (document.getElementById('about-container')) {
-      // Handle Error
-      console.error('Error');
+    if (validations.containerPresence('about-container')) {
+      return document.getElementById('about-container');
     } else {
-      _createElement('about-container', 'content', 'div', ['box', 'no-space', 'flex-grid']);
+      const container = _createElement('about-container', 'content', 'div', ['box', 'no-space', 'flex-grid']);
       _textContainer('presentation-container', 'about-container', pageTxt.presentation.title, pageTxt.presentation.body);
-      _textContainer('opportunity-container', 'about-container', pageTxt.searching.title, pageTxt.searching.body); 
-      _textContainer('contact-container', 'about-container', pageTxt.contact.title, pageTxt.contact.body);
-      _skillsContainer('skills-container', 'about-container', pageTxt.graphic.title, pageTxt.graphic.body);
-      
+      return container
     }
   };
 
+  const skillsTab = () => {
+   if (validations.containerPresence('skills-container')) {
+     return document.getElementById('skills-container');
+   } else {
+     const container = _createElement('skills-container', 'content', 'div', ['box', 'no-space', 'flex-grid']);
+     _skillsContainer('skill', 'skills-container', pageTxt.graphic.title, pageTxt.graphic.body, pageTxt.graphic.data);
+     return container;
+   }
+  };
+  
+
   return {
     listeners,
-    aboutTab
+    aboutTab,
+    skillsTab
   }
 
 })();

@@ -29,24 +29,27 @@ const pageTxt = (() => {
 
   const graphic = {
     title: 'My Skills',
-    body: {
+    body: '',
+    data: {
       type: 'doughnut',
       data: {
-          labels: ['Html & Css', 'JavaScript', 'Ruby', 'Ruby On Rails'],
+          labels: ['Html & Css', 'JavaScript', 'React', 'Ruby', 'Ruby On Rails'],
           datasets: [{
               label: '# of Votes',
-              data: [22.8, 34.8, 11.9, 30.4],
+              data: [21.8, 32.8, 5.1, 10.9, 29.4],
               backgroundColor: [
-                'black',
-                'white',
-                'darkgray',
-                'lightgray'
+                'red',
+                'green',
+                'blue',
+                'yellow',
+                'brown'
               ],
               borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
+                'darkred',
+                'darkgreen',
+                'darkblue',
+                'darkyellow',
+                'darkbrown'
               ],
               borderWidth: 1
           }]
