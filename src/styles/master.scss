@@ -1,1 +1,106 @@
 @import 'framework.css';
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&family=Cutive+Mono&family=Nixie+One&display=swap');
+
+$color-mock: rgba(100,100,100,0.2);
+$font-general: 'Alegreya', serif;
+$font-primary: 'Cutive Mono', monospace;
+$font-aux: 'Nixie One', cursive;
+
+/* * {
+  background-color: $color-mock; 
+  border: solid rgba(50,50,50,0.5);
+}
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  min-height: 100vh;
+}
+
+#content {
+  background-color: whitesmoke;
+  padding: 20px;
+}
+
+.mock-block {
+  min-height: 100vh;
+  background-color: rgb(36, 36, 36); 
+}
+
+/*
+.spin {
+  background-color: red;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+*/
+
+.big-container {
+  min-height: 100vh;
+}
+
+.small-container {
+  min-height: 30vh;
+}
+
+.subtitle {
+  font-family: $font-aux;
+  font-size: 3rem;
+}
+
+.item {
+  text-align: center;
+}
+
+.items-container {
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.item-container {
+  border-radius: 0 10px 0 10px; 
+  height: 20%;
+  transition: 0.2s;
+  border-right: solid lightgray 0.1rem;
+  border-bottom: solid lightgray 0.1rem;
+  border-left: none; 
+  border-top: none;
+  &:hover{
+    transition: 0.2s;
+    cursor: pointer;
+    border-right: none; 
+    border-bottom: none;
+    border-left: solid lightgray 0.1rem;
+    border-top: solid lightgray 0.1rem;
+  }
+}
+
+.body-text {
+  font-family: $font-primary;
+  font-size: 1.5rem;
+}
+
+.no-space {
+  margin:0;
+  padding:0;
+}
+
+footer {
+  height: 1000px;
+}
