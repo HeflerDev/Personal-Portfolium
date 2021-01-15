@@ -2,12 +2,18 @@ import Chart from 'chart.js';
 import pageTxt from '../../assets/txt/pageTxt';
 import validations from './validations';
 
+import githubSvg from '../../assets/vectors/github_logo.svg';
+import gmailSvg from '../../assets/vectors/gmail.svg';
+
+import profilePic from '../../assets/img/profile_pic_round.png';
+
 const render = (() => {
   const listeners = {
     about: document.getElementById('btn-about'),
     skills: document.getElementById('btn-skills'),
     portfolio: document.getElementById('btn-portfolio'),
-    contact: document.getElementById('btn-contact')
+    contact: document.getElementById('btn-contact'),
+    start: document.getElementById('btn-start')
   };
 
   const _createElement = (elId = null, elParent = 'content', elType = 'div', elClass = 'flex-grid') => {    
@@ -26,10 +32,11 @@ const render = (() => {
     return el;
   };
 
-  const _textContainer = (elId, elParent, title, txt) => { 
+  const _textContainer = (elId, elParent, title, txt, img = null) => { 
     _createElement(`big-container-${elId}`, elParent, 'div', ['big-container', 'box', 'center']);
     _createElement(elId, `big-container-${elId}`, 'div', ['small-container', 'flex-grid']); 
-    _createElement(`image-container-${elId}`, elId, 'div', ['col-12', 'col-l-4']); 
+    const image = _createElement(`image-container-${elId}`, elId, 'img', ['col-12', 'col-l-4']);
+    if (img) { image.src = img;}
     _createElement(`text-container-${elId}`, elId, 'div', ['col-12', 'col-l-8', 'flex-grid']);
     _createElement(`title-container-${elId}`, `text-container-${elId}`, 'div', ['col-12', 'minibox', 'center'])
     _createElement(`title-${elId}`, `title-container-${elId}`, 'div', 'subtitle')
@@ -55,7 +62,7 @@ const render = (() => {
       return document.getElementById('about-container');
     } else {
       const container = _createElement('about-container', 'content', 'div', ['box', 'no-space', 'flex-grid']);
-      _textContainer('presentation-container', 'about-container', pageTxt.presentation.title, pageTxt.presentation.body);
+      _textContainer('presentation-container', 'about-container', pageTxt.presentation.title, pageTxt.presentation.body, profilePic);
       return container
     }
   };
@@ -75,7 +82,7 @@ const render = (() => {
       return document.getElementById('portfolio-container');
     } else {
       const container = _createElement('portfolio-container', 'content', 'div', ['box', 'no-space', 'flex-grid']);
-      _textContainer('github-container', 'portfolio-container', pageTxt.portfolio.title, pageTxt.portfolio.body);
+      _textContainer('github-container', 'portfolio-container', pageTxt.portfolio.title, pageTxt.portfolio.body, githubSvg);
       return container;
     }
   };
@@ -85,7 +92,7 @@ const render = (() => {
       return document.getElementById('contact-container');
     } else {
       const container = _createElement('contact-container', 'content', 'div', ['box', 'no-space', 'flex-grid']);
-      _textContainer('talk-to-container', 'contact-container', pageTxt.contact.title, pageTxt.contact.body);
+      _textContainer('talk-to-container', 'contact-container', pageTxt.contact.title, pageTxt.contact.body, gmailSvg);
       return container;
     }
   };

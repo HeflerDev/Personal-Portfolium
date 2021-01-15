@@ -4,7 +4,6 @@ const nav = (() => {
   render.listeners.about.addEventListener('click', () => {
     render.aboutTab()
       .scrollIntoView(true);
-    
   });
 
   render.listeners.skills.addEventListener('click', () => {
@@ -20,6 +19,10 @@ const nav = (() => {
   render.listeners.contact.addEventListener('click', () => {
     render.contactTab()
       .scrollIntoView(true);
+  });
+
+  render.listeners.start.addEventListener('click', () => {
+    document.getElementById('about-container').scrollIntoView(true);
   });
 })();
 
