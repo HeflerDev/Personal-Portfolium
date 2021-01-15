@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
+    "start": "npm run build && webpack serve --host=0.0.0.0 --port=$PORT --disable-host-check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,10 +24,12 @@
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.11.1",
-    "webpack-cli": "^4.3.1"
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "animejs": "^3.2.1",
     "chart.js": "^2.9.4"
-  }
+  },
+  "heroku-run-build-script": true
 }
