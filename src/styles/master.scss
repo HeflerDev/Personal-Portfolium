@@ -52,6 +52,51 @@ h2 {
   }
 }
 
+$color-glow: rgba(255,255,255,0.2);
+$color-brighter: rgba(255,255,255,0.5);
+
+#notebook-glow {
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: $color-glow;
+  border-radius: 50%;
+  box-shadow: 0 0 100px 100px $color-glow ;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: glow 1.2s linear infinite alternate;
+  &::after {
+      content: "";
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 10px 10px $color-brighter ,0 0 10px 10px $color-brighter;
+    opacity: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  &:hover {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    cursor: pointer;
+    &::after {
+      opacity:1;
+    }
+  }
+}
+
+@keyframes glow{
+  to {
+    -webkit-transform: scale(1.50, 1.50);
+    transform: scale(1.50, 1.50);
+  }
+}
+
 .asset {
   width: 50%;
   margin: auto;
