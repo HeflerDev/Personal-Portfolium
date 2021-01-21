@@ -1,5 +1,6 @@
-@import 'framework.css';
+@import 'https://cdn.jsdelivr.net/npm/csstack@1.2.5/css/master.css';
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&family=Cutive+Mono&family=Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
 $color-mock: rgba(100,100,100,0.2);
 
@@ -8,12 +9,7 @@ $color-inverse: whitesmoke;
 $font-general: 'Alegreya', serif;
 $font-primary: 'Cutive Mono', monospace;
 $font-aux: 'Nixie One', cursive;
-
-/* * {
-  background-color: $color-mock; 
-  border: solid rgba(50,50,50,0.5);
-}
-*/
+$font-extra: 'Raleway', sans-serif;
 
 html {
   scroll-behavior: smooth;
@@ -28,9 +24,54 @@ header {
   padding: 20px;
 }
 
+h2 {
+  @media screen and (max-device-width: 768px) {
+    font-size: 2rem;
+  }
+  @media screen and (max-device-width: 425px) {
+    display: none;
+  }
+}
+
 .mock-block {
+  div {
+    cursor: default;
+  }
+  font-family: $font-extra;
+  font-size: 5rem;
+  color:white;
   min-height: 100vh;
-  background-color: rgb(16, 16, 36); 
+  background-image: url('../assets/img/pc.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-color: black;
+  @media screen and (max-device-width: 768px) {
+    background-size: 100%; 
+    font-size: 2rem;
+  }
+}
+
+.asset {
+  width: 50%;
+  margin: auto;
+  transition: 0.1s;
+  &:hover {
+    cursor: pointer;
+    transition: 0.2s; 
+    transform: scale(1.1);
+  }
+}
+
+.sub-asset {
+  width: 40%;
+  margin: auto;
+  transition: 0.1s;
+  &:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    transform: scale(1.1);
+  }
 }
 
 /*
@@ -67,6 +108,12 @@ header {
 
 .big-container {
   min-height: 100vh;
+  span {
+    display:none;
+    @media screen and (max-device-width: 425px) {
+      display:inline;
+    }
+  }
 }
 
 .small-container {
@@ -78,6 +125,11 @@ header {
   font-size: 3rem;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .item {
   text-align: center;
 }
@@ -87,6 +139,9 @@ header {
   position: sticky;
   top: 0;
   background-color: white;
+  @media screen and (max-device-width: 425px) {
+    display:none;
+  }
 }
 
 .item-container {

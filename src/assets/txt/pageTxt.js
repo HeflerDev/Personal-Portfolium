@@ -1,12 +1,12 @@
 const pageTxt = (() => {
 
   const presentation = {
-    title: 'Who am I?',
+    title: 'Full-Stack',
     body: 
-      "Hey, I’m Henry, and I currently Study at Microverse, a remote coding school, " + 
-      "where I train my skills every day as a full-stack software developer. <br>" + 
-      "My design focus on functionality, simplicity and getting straight to the point, " +
-      "as you will notice in this page. "
+      "So, I currently Study at Microverse, a remote coding school, " + 
+      "where I train my skills every day<span> as a full-stack software developer</span>. <br>" + 
+      "My design focus on functionality, simplicity and getting straight to the point " +
+      "as you<span>, who is using a smartphone, </span> will notice in this page. "
   }
 
   const searching = {
