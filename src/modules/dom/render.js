@@ -13,8 +13,23 @@ const render = (() => {
     skills: document.getElementById('btn-skills'),
     portfolio: document.getElementById('btn-portfolio'),
     contact: document.getElementById('btn-contact'),
-    start: document.getElementById('btn-start')
+    start: document.getElementById('btn-start'),
+    text: document.getElementById('change')
   };
+
+  setTimeout(() => {
+    setInterval(() => { 
+      const array = [
+        ' build solutions',
+        ' create apps',
+        ' solve problems',
+        ' form ideas',
+        ' improve concepts'
+      ]
+      const result = Math.floor((array.length - 0) * Math.random());
+      listeners.text.innerHTML = array[result];
+    }, 2000);
+  }, 3000);
 
   const _createElement = (elId = null, elParent = 'content', elType = 'div', elClass = 'board') => {    
     const el = document.createElement(elType);
@@ -51,7 +66,7 @@ const render = (() => {
 
   const _addContentTo = (elId, elParent, txt, img) => {
     _createElement(`sub-container-${elId}`, elParent, 'div', ['stack', 'center']);
-    _createElement(elId, `sub-container-${elId}`, 'div', 'board'); 
+    _createElement(elId, `sub-container-${elId}`, 'div', ['board', 'sub-container']); 
 
     _createElement(`img-container-${elId}`, elId, 'div', ['col-12', 'col-l-4']);
       const image = _createElement(`img-${elId}`, `img-container-${elId}`, 'img', 'sub-asset');
@@ -69,7 +84,7 @@ const render = (() => {
     _createElement(`skill-block-${elId}`, elId, 'div', ['col-12', 'col-l-5']);
       const graph = _createElement(`skill-${elId}`, `skill-block-${elId}`, 'canvas');
     _createElement(`skill-desc-${elId}`, elId, 'div', ['col-12', 'col-l-6', 'queue', 'body-text'])
-      .textContent = body; 
+      .innerHTML = body; 
     return new Chart(graph, obj); // the bug is because of this
   };
 
@@ -99,9 +114,13 @@ const render = (() => {
     } else {
       const container = _createElement('portfolio-container', 'content', 'div', ['stack', 'no-space', 'board']);
       _textContainer('github-container', 'portfolio-container', pageTxt.portfolio.title, pageTxt.portfolio.body, githubSvg);
-      _addContentTo('github-sub-container', 'github-container', 'Example One', githubSvg)
-      _addContentTo('github-sub-container2', 'github-container', 'Example Two', githubSvg)
-      _addContentTo('github-sub-container3', 'github-container', 'Example Three', githubSvg)
+
+      const gamePath = pageTxt.portfolio.projects.phaserGame;
+      _addContentTo('github-sub-container', 'github-container', gamePath.description, gamePath.img);
+      const socialPath = pageTxt.portfolio.projects.socialNetwork;
+      _addContentTo('github-sub-container2', 'github-container', socialPath.description, socialPath.img);
+      const cssPath = pageTxt.portfolio.projects.csStack;
+      _addContentTo('github-sub-container3', 'github-container', cssPath.description, cssPath.img);
       return container;
     }
   };

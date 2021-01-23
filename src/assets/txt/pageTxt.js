@@ -1,3 +1,7 @@
+import gameImg from '../img/game_demo.png';
+import socialImg from '../img/social_demo.png';
+import csStackImg from '../img/csstack.png';
+
 const pageTxt = (() => {
 
   const presentation = {
@@ -30,14 +34,33 @@ const pageTxt = (() => {
   const portfolio = {
     title: "Portfolio",
     body: 
-      "I Have several projects hosted on github <a href='https://github.com/heflerdev'>Here</a>."
+    "Most of my projects are hosted on <strong><a href='https://github.com/heflerdev'>github</a></strong>.",
+    projects: {
+      phaserGame: {
+        img: gameImg,
+        description: 
+          '<strong>Caves and Bats</strong> is a game made in Phaser 3 to test my skills when dealing ' + 
+          'with something entirely new.'
+      },
+      socialNetwork: {
+        img: socialImg,
+        description: 
+        '<strong>In#Tune</strong> project was made to be a twitter-like social network using Ruby on Rails.  <br>'
+      },
+      csStack: {
+        img: csStackImg,
+        description: 
+        'Since CSS is very present in web development, I created <strong>CSStack</strong>, a framework ' +
+          'that ease the process of building the structure of a page.'
+      }
+    }
   }
 
   const graphic = {
     title: 'My Skills',
     body: 
-      "In the past year, I’ve created plenty of React, Rails, and Web projects additionally, " +
-      "growing my teamwork through pair coding with people from all around the world. " 
+    "<div>In the past year, I’ve created plenty of <strong>React, Rails, and Web projects</strong> additionally, " +
+    "growing my teamwork through pair coding with people from all around the world. </div>" 
     ,
     data: {
       type: 'doughnut',

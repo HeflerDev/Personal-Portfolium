@@ -58,8 +58,8 @@ $color-brighter: rgba(255,255,255,0.5);
 #notebook-glow {
   position: relative;
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 1rem;
+  height: 1rem;
   background-color: $color-glow;
   border-radius: 50%;
   box-shadow: 0 0 100px 100px $color-glow ;
@@ -94,6 +94,20 @@ $color-brighter: rgba(255,255,255,0.5);
   to {
     -webkit-transform: scale(1.50, 1.50);
     transform: scale(1.50, 1.50);
+    @media screen and (max-device-width: 425px){
+      transform: scale(1.75, 1.75);
+      box-shadow: 0 0 100px 100px $color-brighter ;
+      background-color: $color-brighter;
+    }
+  }
+}
+
+.sub-container {
+  border-radius: 10px;
+  transition: 0.2s;
+  &:hover {
+    box-shadow: 0 0 5px 5px rgba(16,16,16,0.3);
+    transition: 0.3s;
   }
 }
 
@@ -106,16 +120,21 @@ $color-brighter: rgba(255,255,255,0.5);
     transition: 0.2s; 
     transform: scale(1.1);
   }
+  @media screen and (max-device-width) {
+    width: 50%;
+    &:hover {
+      transform: none;
+    }
+  }
 }
 
 .sub-asset {
-  width: 40%;
+  width: 100%;
   margin: auto;
   transition: 0.1s;
+  border-radius: 10px 0 0 10px;
   &:hover {
     cursor: pointer;
-    transition: 0.2s;
-    transform: scale(1.1);
   }
 }
 
@@ -177,6 +196,7 @@ $color-brighter: rgba(255,255,255,0.5);
 
 .item {
   text-align: center;
+  text-size: 2rem;
 }
 
 .items-container {
