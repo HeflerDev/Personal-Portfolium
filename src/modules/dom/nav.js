@@ -1,6 +1,12 @@
 import render from './render';
 
 const nav = (() => {
+
+  render.listeners.portfolioHeader.addEventListener('click', () => {
+    render.portfolioTab()
+      .scrollIntoView(true);
+  });
+
   render.listeners.about.addEventListener('click', () => {
     render.aboutTab()
       .scrollIntoView(true);
@@ -17,6 +23,11 @@ const nav = (() => {
   });
   
   render.listeners.contact.addEventListener('click', () => {
+    render.contactTab()
+      .scrollIntoView(true);
+  });
+
+  render.listeners.contactHeader.addEventListener('click', () => {
     render.contactTab()
       .scrollIntoView(true);
   });

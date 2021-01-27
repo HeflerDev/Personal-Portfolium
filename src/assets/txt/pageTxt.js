@@ -22,19 +22,28 @@ const pageTxt = (() => {
   }
 
   const contact = {
-    title: "Want to talk to me?",
+    title: "Want to reach me?",
     body:
       "Well, I’d love to not only connect with possible employers, " +
       "but also people who share the same interests as me. " +
-      "So, want to hire me, or invite me for a cup of coffee? " +
-      "Just contact me through <a href='https://www.linkedin.com/in/heflerdev/'>LinkedIn</a> " +
-      "or through the e-mail heflerdev@gmail.com."
+      "So, want to hire me ?<br>" +
+      "<div align='left'>" +
+      "<br>" +
+        "Contact me through <a href='https://www.linkedin.com/in/heflerdev/' target='_blank'>LinkedIn</a>.<br>" +
+        "Also, the e-mail <a href='mailto:heflerdev@gmail.com' target='_blank'>heflerdev@gmail.com</a>." +
+    "<br><br>"+
+        "For a more casual conversation, <a href='https://twitter.com/HeflerDev' target='_blank'>Twitter</a>"+
+      "</div>" 
   }
 
   const portfolio = {
     title: "Portfolio",
     body: 
-    "Most of my projects are hosted on <strong><a href='https://github.com/heflerdev'>github</a></strong>.",
+    "Light plain websites, colorful social media, in-browser games, etc. " +
+    "My work focus on not only making solutions but to adapt them, taking the " +
+    "middle line between creativity and logic to build the final product.<br>" +
+    "If you want to know more, all my projects are hosted on " +
+    "<strong><a href='https://github.com/HeflerDev' target='_blank'>Github</a></strong>",
     projects: {
       phaserGame: {
         img: gameImg,

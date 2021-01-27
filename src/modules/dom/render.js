@@ -12,7 +12,9 @@ const render = (() => {
     about: document.getElementById('btn-about'),
     skills: document.getElementById('btn-skills'),
     portfolio: document.getElementById('btn-portfolio'),
+    portfolioHeader: document.getElementById('btn-portfolio-header'),
     contact: document.getElementById('btn-contact'),
+    contactHeader: document.getElementById('btn-contact-header'),
     start: document.getElementById('btn-start'),
     text: document.getElementById('change')
   };
@@ -62,6 +64,7 @@ const render = (() => {
     _createElement(`description-container-${elId}`, `text-container-${elId}`, 'div', ['col-12', 'queue', 'center']);
     _createElement(`description-${elId}`, `description-container-${elId}`, 'div', 'body-text')
       .innerHTML = txt;
+    return image;
   };
 
   const _addContentTo = (elId, elParent, txt, img) => {
@@ -75,6 +78,7 @@ const render = (() => {
     _createElement(`txt-container-${elId}`, elId, 'div', ['col-12', 'col-l-8', 'container', 'center']);
     _createElement(`txt-${elId}`, `txt-container-${elId}`, 'div', ['body-text', 'item'])
       .innerHTML = txt;
+    return image;
   };
 
   const _skillsContainer = (elId, elParent, title, body,  obj) => {
@@ -113,14 +117,17 @@ const render = (() => {
       return document.getElementById('portfolio-container');
     } else {
       const container = _createElement('portfolio-container', 'content', 'div', ['stack', 'no-space', 'board']);
-      _textContainer('github-container', 'portfolio-container', pageTxt.portfolio.title, pageTxt.portfolio.body, githubSvg);
-
+      const img = _textContainer('github-container', 'portfolio-container', pageTxt.portfolio.title, pageTxt.portfolio.body, githubSvg);
+      img.onclick = () => window.open("https://github.com/heflerdev", "_blank")
       const gamePath = pageTxt.portfolio.projects.phaserGame;
-      _addContentTo('github-sub-container', 'github-container', gamePath.description, gamePath.img);
+      _addContentTo('github-sub-container', 'github-container', gamePath.description, gamePath.img)
+        .onclick = () => { window.open("https://bats-and-caves.herokuapp.com/dist/", "_blank")};
       const socialPath = pageTxt.portfolio.projects.socialNetwork;
-      _addContentTo('github-sub-container2', 'github-container', socialPath.description, socialPath.img);
+      _addContentTo('github-sub-container2', 'github-container', socialPath.description, socialPath.img)
+        .onclick = () => { window.open("https://guarded-beach-33158.herokuapp.com/login", "_blank")};
       const cssPath = pageTxt.portfolio.projects.csStack;
-      _addContentTo('github-sub-container3', 'github-container', cssPath.description, cssPath.img);
+      _addContentTo('github-sub-container3', 'github-container', cssPath.description, cssPath.img)
+        .onclick = () => { window.open("https://github.com/HeflerDev/CSStack")};
       return container;
     }
   };
@@ -130,7 +137,8 @@ const render = (() => {
       return document.getElementById('contact-container');
     } else {
       const container = _createElement('contact-container', 'content', 'div', ['stack', 'no-space', 'board']);
-      _textContainer('talk-to-container', 'contact-container', pageTxt.contact.title, pageTxt.contact.body, gmailSvg);
+      _textContainer('talk-to-container', 'contact-container', pageTxt.contact.title, pageTxt.contact.body, gmailSvg)
+        .onclick = () => { window.open("mailto:heflerdev@gmail.com", "_blank")};
       return container;
     }
   };

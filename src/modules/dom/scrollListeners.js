@@ -27,10 +27,6 @@ const scrollListeners = () => {
       render.listeners.contact.classList.add('active') :
       render.listeners.contact.classList.remove('active');
   });
-
-  
-   
-
 };
 
 export default scrollListeners;
