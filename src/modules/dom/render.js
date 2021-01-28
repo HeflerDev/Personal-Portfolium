@@ -75,9 +75,13 @@ const render = (() => {
       const image = _createElement(`img-${elId}`, `img-container-${elId}`, 'img', 'sub-asset');
       if (img) { image.src = img }; 
 
-    _createElement(`txt-container-${elId}`, elId, 'div', ['col-12', 'col-l-8', 'container', 'center']);
+    _createElement(`txt-container-${elId}`, elId, 'div', ['col-12', 'col-l-8', 'queue', 'column', 'center']);
     _createElement(`txt-${elId}`, `txt-container-${elId}`, 'div', ['body-text', 'item'])
       .innerHTML = txt;
+
+    _createElement(`badge-container-${elId}`, elId, 'div', 'col-12');
+      _createElement(`badge-github-${elId}`, `badge-container-${elId}`, 'img').src = '';
+      _createElement(`badge-heroku-${elId}`, `badge-container-${elId}`, 'img').src = '';
     return image;
   };
 
@@ -119,12 +123,15 @@ const render = (() => {
       const container = _createElement('portfolio-container', 'content', 'div', ['stack', 'no-space', 'board']);
       const img = _textContainer('github-container', 'portfolio-container', pageTxt.portfolio.title, pageTxt.portfolio.body, githubSvg);
       img.onclick = () => window.open("https://github.com/heflerdev", "_blank")
+      
       const gamePath = pageTxt.portfolio.projects.phaserGame;
       _addContentTo('github-sub-container', 'github-container', gamePath.description, gamePath.img)
         .onclick = () => { window.open("https://bats-and-caves.herokuapp.com/dist/", "_blank")};
+
       const socialPath = pageTxt.portfolio.projects.socialNetwork;
       _addContentTo('github-sub-container2', 'github-container', socialPath.description, socialPath.img)
         .onclick = () => { window.open("https://guarded-beach-33158.herokuapp.com/login", "_blank")};
+
       const cssPath = pageTxt.portfolio.projects.csStack;
       _addContentTo('github-sub-container3', 'github-container', cssPath.description, cssPath.img)
         .onclick = () => { window.open("https://github.com/HeflerDev/CSStack")};

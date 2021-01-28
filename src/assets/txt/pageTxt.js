@@ -9,8 +9,8 @@ const pageTxt = (() => {
     body: 
       "So, I currently Study at Microverse, a remote coding school, " + 
       "where I train my skills every day<span> as a full-stack software developer</span>. <br>" + 
-      "My design focus on functionality, simplicity and getting straight to the point " +
-      "as you<span>, who is using a smartphone, </span> will notice in this page. "
+      "My design focus on functionality, simplicity, and getting straight to the point, " +
+      "as you<span>, who is using a smartphone, </span> will notice on this page. "
   }
 
   const searching = {
@@ -44,23 +44,48 @@ const pageTxt = (() => {
     "middle line between creativity and logic to build the final product.<br>" +
     "If you want to know more, all my projects are hosted on " +
     "<strong><a href='https://github.com/HeflerDev' target='_blank'>Github</a></strong>",
+    badges: {
+      github: 'https://img.shields.io/badge/-Repository-black?style=for-the-badge&logo=github',
+      heroku: 'https://img.shields.io/badge/-Live%20Version-FF0000?style=for-the-badge&logo=heroku'
+    },
     projects: {
       phaserGame: {
         img: gameImg,
         description: 
-          '<strong>Caves and Bats</strong> is a game made in Phaser 3 to test my skills when dealing ' + 
-          'with something entirely new.'
+            '<strong>Caves and Bats</strong> is a game made in Phaser 3 to test my skills when dealing ' + 
+            'with something entirely new.<br>' +
+          "<div class='board between mt-auto'>" +
+          "<a href='https://github.com/HeflerDev/Microverse-Project-Phaser-Game' target='_blank' class='col-4 col-l-3'>" +
+            "<img src='https://img.shields.io/badge/-Repository-black?style=for-the-badge&logo=github'>" +
+          "</a>" +
+          "<a href='https://bats-and-caves.herokuapp.com/dist/' target='_blank' class='col-4 col-l-3'>" +
+            "<img src='https://img.shields.io/badge/-Live%20Version-FF0000?style=for-the-badge&logo=heroku'>" +
+          "</a>" +
+          "</div>" 
       },
       socialNetwork: {
         img: socialImg,
         description: 
-        '<strong>In#Tune</strong> project was made to be a twitter-like social network using Ruby on Rails.  <br>'
+        '<strong>In#Tune</strong> project was made to be a twitter-like social network using Ruby on Rails.  <br>' +
+          "<div class='board between mt-auto'>" +
+          "<a href='https://github.com/HeflerDev/Rails-In-Tune-Social-Network' target='_blank' class='col-4 col-l-3'>" +
+            "<img src='https://img.shields.io/badge/-Repository-black?style=for-the-badge&logo=github'>" +
+          "</a>" +
+          "<a href='https://guarded-beach-33158.herokuapp.com/login' target='_blank' class='col-4 col-l-3'>" +
+            "<img src='https://img.shields.io/badge/-Live%20Version-FF0000?style=for-the-badge&logo=heroku'>" +
+          "</a>" +
+          "</div>" 
       },
       csStack: {
         img: csStackImg,
         description: 
         'Since CSS is very present in web development, I created <strong>CSStack</strong>, a framework ' +
-          'that ease the process of building the structure of a page.'
+          'that ease the process of building the structure of a page.' +
+          "<div class='board center mt-auto'>" +
+          "<a href='https://github.com/HeflerDev/CSStack' target='_blank' class='col-6 col-m-4 col-l-3'>" +
+            "<img src='https://img.shields.io/badge/-Repository-black?style=for-the-badge&logo=github'>" +
+          "</a>" +
+          "</div>" 
       }
     }
   }
