@@ -1,5 +1,5 @@
-import inView from '../inView';
-import render from './render';
+import inView from '../../inView';
+import render from '../render/render';
 
 const scrollListeners = () => {
 

@@ -8,6 +8,8 @@ $color-inverse: whitesmoke;
 
 $color-deep-black: rgb(8,8,32);
 
+$color-background: #282a36;
+
 $font-general: 'Alegreya', serif;
 $font-primary: 'Cutive Mono', monospace;
 $font-aux: 'Nixie One', cursive;
@@ -105,6 +107,7 @@ $color-brighter: rgba(255,255,255,0.5);
 
 .sub-container {
   border-radius: 10px;
+  border: solid rgba(16,16,32,0.2) 1px;
   transition: 0.2s;
   &:hover {
     box-shadow: 0 0 5px 5px rgba(16,16,16,0.3);
@@ -137,26 +140,10 @@ $color-brighter: rgba(255,255,255,0.5);
   &:hover {
     cursor: pointer;
   }
+  @media screen and (max-device-width: 425px) {
+    border-radius: 10px 10px 0 0;
+  }
 }
-
-/*
-.spin {
-  background-color: red;
-  animation-name: spin;
-  animation-duration: 5000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear; 
-}
-
-@keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
-}
-*/
 
 .btn-light {
   font-size: 2rem;
@@ -207,7 +194,7 @@ $color-brighter: rgba(255,255,255,0.5);
   position: sticky;
   top: 0;
   justify-content: flex-end;
-  background-color: white;
+  background-color: $color-background;
   @media screen and (max-device-width: 425px) {
     display:none;
   }
@@ -232,6 +219,7 @@ a {
   width: 50%;
   margin-right: 0;
   transition: 1s;
+  background-color: gray;
   &:hover{
     transition: 0.2s;
     width: 90%;

@@ -1,11 +1,11 @@
 import Chart from 'chart.js';
-import pageTxt from '../../assets/txt/pageTxt';
-import validations from './validations';
+import pageTxt from '../../../assets/txt/pageTxt';
+import validations from '../listeners/validations';
 
-import githubSvg from '../../assets/vectors/github_logo.svg';
-import gmailSvg from '../../assets/vectors/gmail.svg';
+import githubSvg from '../../../assets/vectors/github_logo.svg';
+import gmailSvg from '../../../assets/vectors/gmail.svg';
 
-import profilePic from '../../assets/img/profile_pic_round.png';
+import profilePic from '../../../assets/img/profile_pic_round.png';
 
 const render = (() => {
   const listeners = {

@@ -1,7 +1,7 @@
 import './styles/master.scss';
-import './modules/dom/nav';
-import render from './modules/dom/render';
-import scrollListeners from './modules/dom/scrollListeners';
+import './modules/dom/listeners/nav';
+import render from './modules/dom/render/render';
+import scrollListeners from './modules/dom/listeners/scrollListeners';
 
 render.aboutTab()
   .scrollIntoView(true);
